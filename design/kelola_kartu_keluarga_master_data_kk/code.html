@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kelola Kartu Keluarga - SIP-Warga RT 05 / RW 08</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with configuration plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-container": "#777cd3",
+            "surface-tint": "#5156aa",
+            "on-surface-variant": "#464651",
+            "on-error": "#ffffff",
+            "secondary-fixed-dim": "#c3c0ff",
+            "surface-variant": "#dae2fd",
+            "tertiary": "#000000",
+            "secondary-fixed": "#e2dfff",
+            "outline-variant": "#c7c5d3",
+            "on-tertiary-container": "#488bad",
+            "surface": "#faf8ff",
+            "on-secondary-fixed": "#0f0069",
+            "primary-container": "#070666",
+            "tertiary-container": "#001e2c",
+            "tertiary-fixed": "#c3e8ff",
+            "inverse-on-surface": "#eef0ff",
+            "secondary": "#5451b8",
+            "on-background": "#131b2e",
+            "on-primary-fixed": "#070666",
+            "secondary-container": "#9592fe",
+            "surface-dim": "#d2d9f4",
+            "surface-container-highest": "#dae2fd",
+            "background": "#faf8ff",
+            "surface-container": "#eaedff",
+            "on-tertiary-fixed-variant": "#004c68",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "primary": "#000000",
+            "surface-container-low": "#f2f3ff",
+            "tertiary-fixed-dim": "#8dcff3",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#131b2e",
+            "outline": "#777683",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#001e2c",
+            "primary-fixed-dim": "#bfc1ff",
+            "inverse-primary": "#bfc1ff",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#3c379f",
+            "on-primary-fixed-variant": "#393d91",
+            "on-error-container": "#93000a",
+            "inverse-surface": "#283044",
+            "surface-container-high": "#e2e7ff",
+            "primary-fixed": "#e1e0ff",
+            "surface-bright": "#faf8ff",
+            "on-secondary-container": "#29228d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "margin": "2rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "gutter-mobile": "0.75rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-xs": "0.25rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "code-sm": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+            "title-md": ["16px", {"lineHeight": "22px", "fontWeight": "600"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "code-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- ==================== SIDE NAVIGATION (Desktop Anchor) ==================== -->
+<aside class="fixed top-0 left-0 h-screen w-64 z-50 bg-surface dark:bg-inverse-surface border-r border-outline-variant dark:border-outline shadow-none flex flex-col justify-between p-space-md hidden md:flex transition-all">
+<!-- Header Logo & Subtext -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm px-space-xs">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-white shadow-sm ring-2 ring-secondary/20">
+<span class="material-symbols-outlined text-2xl text-secondary-fixed">apartment</span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-extrabold text-primary-container dark:text-primary-fixed tracking-tight">SIP-Warga</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant font-medium">RT 05 / RW 08 Kelurahan</span>
+</div>
+</div>
+<!-- Quick Action CTA -->
+<button class="w-full flex items-center justify-center gap-space-sm py-2.5 px-space-md rounded-lg bg-primary-container text-white text-label-md font-label-md font-bold shadow hover:bg-opacity-95 transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Tambah KK Baru</span>
+</button>
+<!-- Main Navigation Links (6 Tabs) -->
+<nav class="flex flex-col gap-1.5 mt-2">
+<!-- Tab 1: Dashboard -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container text-on-surface dark:text-inverse-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard &amp; Rekap</span>
+</a>
+<!-- Tab 2: Daftar Semua Warga -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container text-on-surface dark:text-inverse-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">groups</span>
+<span class="text-label-md font-label-md">Daftar Semua Warga</span>
+</a>
+<!-- Tab 3: Kelola Kartu Keluarga (ACTIVE STATE CRITICAL LOCK) -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg bg-surface-container-high dark:bg-surface-container text-on-surface dark:text-inverse-on-surface font-semibold border-l-4 border-secondary shadow-sm" href="#">
+<span class="material-symbols-outlined text-xl text-secondary" style="font-variation-settings: 'FILL' 1;">badge</span>
+<span class="text-label-md font-label-md text-on-surface font-bold">Kelola Kartu Keluarga</span>
+<span class="ml-auto bg-primary-container text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">142</span>
+</a>
+<!-- Tab 4: Riwayat Mutasi Warga -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container text-on-surface dark:text-inverse-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">swap_horiz</span>
+<span class="text-label-md font-label-md">Riwayat Mutasi Warga</span>
+</a>
+<!-- Tab 5: Audit Trail Log -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container text-on-surface dark:text-inverse-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">history</span>
+<span class="text-label-md font-label-md">Audit Trail Log</span>
+</a>
+<!-- Tab 6: Pengaturan Role -->
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-low dark:hover:bg-surface-container text-on-surface dark:text-inverse-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">admin_panel_settings</span>
+<span class="text-label-md font-label-md">Pengaturan Role</span>
+</a>
+</nav>
+</div>
+<!-- Footer SideNav Links -->
+<div class="flex flex-col gap-1 border-t border-outline-variant/60 pt-space-sm">
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">help_outline</span>
+<span class="text-label-md font-label-md">Bantuan &amp; Dokumentasi</span>
+</a>
+<a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-error hover:bg-error-container/40 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-xl">logout</span>
+<span class="text-label-md font-label-md">Keluar</span>
+</a>
+</div>
+</aside>
+<!-- ==================== MAIN WRAPPER (Responsive Margin for SideNav) ==================== -->
+<div class="flex-1 md:ml-64 flex flex-col min-w-0">
+<!-- TopNavBar Component (Shared Anchor) -->
+<header class="docked full-width top-0 sticky z-40 bg-surface-container-lowest dark:bg-inverse-surface shadow-sm dark:shadow-none flex justify-between items-center w-full px-space-lg py-space-sm">
+<!-- Left side: App Identifier & Quick Search Input -->
+<div class="flex items-center gap-space-md flex-1 max-w-xl">
+<button class="md:hidden p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden sm:flex flex-col">
+<span class="text-title-md font-title-md font-bold text-on-surface dark:text-inverse-on-surface">Sistem Informasi Warga RT 05/RW 08</span>
+<span class="text-[11px] text-on-surface-variant">Portal Administrasi Terpadu &amp; Kependudukan</span>
+</div>
+<div class="relative w-full max-w-xs ml-2">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-outline">
+<span class="material-symbols-outlined text-lg">search</span>
+</span>
+<input class="w-full h-9 pl-9 pr-8 text-body-sm font-body-sm rounded-lg border border-outline-variant bg-surface-bright focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Cari NIK, KK, atau Rumah..." type="text"/>
+<span class="absolute inset-y-0 right-0 flex items-center pr-2.5 pointer-events-none">
+<kbd class="px-1.5 py-0.5 text-[10px] font-semibold text-outline bg-surface-container border border-outline-variant rounded">⌘K</kbd>
+</span>
+</div>
+</div>
+<!-- Right side: Notifications, Help & User Profile -->
+<div class="flex items-center gap-space-sm">
+<button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-150 active:scale-95" title="Notifikasi Verifikasi">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-150 active:scale-95" title="Bantuan">
+<span class="material-symbols-outlined text-xl">help</span>
+</button>
+<div class="h-6 w-px bg-outline-variant/60 mx-1"></div>
+<!-- Trailing Secondary Profile Info -->
+<div class="flex items-center gap-space-sm pl-1">
+<div class="text-right hidden sm:flex flex-col">
+<span class="text-label-md font-label-md text-on-surface font-bold leading-tight">Sekretaris RT - Ibu Nurhayati</span>
+<span class="text-[11px] text-on-surface-variant font-medium">Petugas Administrasi</span>
+</div>
+<div class="relative">
+<img class="w-9 h-9 rounded-full object-cover ring-2 ring-primary-container/20" data-alt="Close up photographic portrait of Ibu Nurhayati, a middle-aged Indonesian female neighborhood secretary wearing a neat light sage jilbab and modern cream blazer in an organized community administration office with soft daylight illumination and a warm professional smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC46dtvbCZKA_ceB1SMNn8K-esaNGf-IlMfHiBQYY5OyrBm4IdxLwCquozBSU2SHFPkqLy5MkI0Y4ysgAH8eyVJB5lrXEu4kpC2z28DraXrMJCesTw5hRN3GFnRtbfSZ-Fh5JdUPDbl4cxurJ5u5KxUSWlxcf5U5___kKK9Z_MLYE8a6fepxRKF2tL44NtPWFPAiyGXEf_sfj-0xMtqcWUpLJHhiEMSV0FiZEnuueex"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full ring-2 ring-white"></span>
+</div>
+</div>
+</div>
+</header>
+<!-- ==================== MAIN CONTENT CANVAS ==================== -->
+<main class="flex-1 p-space-md md:p-space-xl flex flex-col gap-space-lg max-w-[1600px] w-full mx-auto">
+<!-- 1. Breadcrumb, Title & Master Action Bar -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md border-b border-outline-variant/40 pb-space-md">
+<div class="flex flex-col gap-1.5">
+<!-- Breadcrumb -->
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span class="hover:text-primary-container cursor-pointer">Portal Kependudukan</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-primary-container font-bold">Kelola Kartu Keluarga</span>
+</div>
+<!-- Title & Badges -->
+<div class="flex flex-wrap items-center gap-space-sm mt-0.5">
+<h1 class="text-headline-lg font-headline-lg tracking-tight text-on-surface">Kelola Kartu Keluarga (Data Induk Rumah Tangga)</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span>
+              142 KK Terverifikasi
+            </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-label-sm font-label-sm bg-surface-container text-on-surface-variant border border-outline-variant/70">
+<span class="material-symbols-outlined text-xs text-secondary">verified</span>
+              Ledger Dukcapil Ready
+            </span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-3xl">
+            Pusat pengelolaan 142 Kartu Keluarga aktif di lingkungan RT 05 / RW 08 Cibubur. Mendukung verifikasi KK baru, pembaruan data kepala keluarga, mutasi keluar, dan arsip digital.
+          </p>
+</div>
+<!-- Action Buttons Cluster -->
+<div class="flex flex-wrap items-center gap-2.5 self-start lg:self-auto">
+<!-- Cetak PDF -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container-low text-label-md font-label-md font-medium transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-lg text-on-surface-variant">picture_as_pdf</span>
+<span>Cetak Rekap KK (PDF)</span>
+</button>
+<!-- Ekspor Excel -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container-low text-label-md font-label-md font-medium transition-all shadow-sm active:scale-95">
+<span class="material-symbols-outlined text-lg text-emerald-700">table_view</span>
+<span>Ekspor Rekap KK (.xlsx)</span>
+</button>
+<!-- Primary Civic Button: Navy #030164 -->
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-white text-label-md font-label-md font-bold shadow-md hover:bg-opacity-90 transition-all active:scale-95 ring-2 ring-primary-container/20">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>+ Tambah KK Baru</span>
+</button>
+</div>
+</section>
+<!-- 2. METRIC & STATISTIC CARDS (Ringkasan Cepat) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1: Total KK Aktif -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-sm relative overflow-hidden border-t-4 border-t-primary-container">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Total KK Aktif</p>
+<h3 class="text-display-lg font-display-lg text-on-surface mt-1">142 <span class="text-headline-sm font-headline-sm text-outline font-normal">KK</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">roofing</span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-emerald-700 font-semibold">Tetap: 118</span>
+<span>•</span>
+<span class="text-blue-700 font-semibold">Kontrak: 19</span>
+<span>•</span>
+<span class="text-purple-700 font-semibold">Kos: 5</span>
+</div>
+</div>
+<!-- Metric 2: Rata-rata Anggota / KK -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-sm relative overflow-hidden border-t-4 border-t-on-tertiary-container">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Rata-rata Anggota / KK</p>
+<h3 class="text-display-lg font-display-lg text-on-surface mt-1">3.4 <span class="text-headline-sm font-headline-sm text-outline font-normal">Jiwa</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/40 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-2xl">diversity_1</span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface">Total 486 Penduduk Terdata</span>
+<span class="ml-auto inline-flex items-center text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded text-[10px]">
+<span class="material-symbols-outlined text-xs">trending_up</span> 100% Valid
+            </span>
+</div>
+</div>
+<!-- Metric 3: KK Rentan / Bantuan Bansos -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-sm relative overflow-hidden border-t-4 border-t-secondary">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">KK Rentan / Bansos RT</p>
+<h3 class="text-display-lg font-display-lg text-on-surface mt-1">16 <span class="text-headline-sm font-headline-sm text-outline font-normal">KK</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">volunteer_activism</span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded text-[11px] font-semibold border border-amber-200">Terdaftar Non-DTKS &amp; Usulan Bansos</span>
+</div>
+</div>
+<!-- Metric 4: Berkas Scan KK Digital -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-sm relative overflow-hidden border-t-4 border-t-emerald-600">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">Scan KK Terverifikasi</p>
+<h3 class="text-display-lg font-display-lg text-on-surface mt-1">138 <span class="text-headline-sm font-headline-sm text-outline font-normal">/ 142</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-700">
+<span class="material-symbols-outlined text-2xl">verified_user</span>
+</div>
+</div>
+<div class="mt-3 pt-2.5 border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm">
+<div class="w-full bg-surface-container rounded-full h-2 mr-2">
+<div class="bg-emerald-600 h-2 rounded-full" style="width: 97.2%"></div>
+</div>
+<span class="text-emerald-700 font-bold whitespace-nowrap">97.2%</span>
+</div>
+</div>
+</section>
+<!-- 3. TOOLBAR PENCARIAN & FILTER MULTI-DIMENSI -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md border border-outline-variant/60 shadow-sm flex flex-col gap-3">
+<!-- Top row: Search and Quick Pill Filters -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+<!-- Search Box -->
+<div class="relative flex-1">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-on-tertiary-container">
+<span class="material-symbols-outlined text-xl">search</span>
+</span>
+<input class="w-full h-11 pl-11 pr-24 text-body-md font-body-md rounded-lg border border-outline-variant bg-surface-bright focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all" placeholder="Cari No. KK (16 digit), Nama Kepala Keluarga, atau Alamat Blok..." type="text"/>
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 gap-1">
+<span class="text-[11px] text-outline font-medium bg-surface-container px-2 py-1 rounded border border-outline-variant">Filter Aktif: 0</span>
+</div>
+</div>
+<!-- Quick Actions / Reset -->
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-2.5 rounded-lg border border-outline-variant hover:bg-surface-container text-body-sm font-label-md text-on-surface-variant flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-base">filter_list</span>
+<span>Reset Filter</span>
+</button>
+<button class="px-3.5 py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary-container text-label-md font-label-md font-bold flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-base">qr_code_scanner</span>
+<span>Scan QR KK</span>
+</button>
+</div>
+</div>
+<!-- Filter Selectors Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 pt-2 border-t border-outline-variant/30">
+<!-- Filter 1: Status Hunian -->
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold text-on-surface-variant tracking-wider uppercase">Status Hunian</label>
+<select class="h-9 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-medium focus:ring-2 focus:ring-secondary focus:outline-none">
+<option selected="">Semua Status (142)</option>
+<option>Tetap (Milik Sendiri) - 118</option>
+<option>Kontrak - 19</option>
+<option>Kos - 5</option>
+</select>
+</div>
+<!-- Filter 2: Blok RT -->
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold text-on-surface-variant tracking-wider uppercase">Wilayah / Blok RT</label>
+<select class="h-9 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-medium focus:ring-2 focus:ring-secondary focus:outline-none">
+<option selected="">Semua Blok (A, B, C)</option>
+<option>Blok A (Mawar) - 52 KK</option>
+<option>Blok B (Melati) - 48 KK</option>
+<option>Blok C (Kenanga) - 42 KK</option>
+</select>
+</div>
+<!-- Filter 3: Jumlah Anggota -->
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold text-on-surface-variant tracking-wider uppercase">Jumlah Anggota</label>
+<select class="h-9 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-medium focus:ring-2 focus:ring-secondary focus:outline-none">
+<option selected="">Semua Jumlah Jiwa</option>
+<option>1 - 2 Jiwa (Keluarga Kecil / Lansia)</option>
+<option>3 - 4 Jiwa (Standar)</option>
+<option>5+ Jiwa (Keluarga Besar)</option>
+</select>
+</div>
+<!-- Filter 4: Bansos & Iuran -->
+<div class="flex flex-col gap-1">
+<label class="text-[11px] font-bold text-on-surface-variant tracking-wider uppercase">Bansos &amp; Keuangan RT</label>
+<select class="h-9 px-3 rounded-lg border border-outline-variant bg-surface-container-lowest text-body-sm font-medium focus:ring-2 focus:ring-secondary focus:outline-none">
+<option selected="">Semua Kategori</option>
+<option>Penerima Usulan Bansos RT (16)</option>
+<option>Iuran Lingkungan Tertib Lunas</option>
+<option>Menunggak Iuran Lingkungan</option>
+</select>
+</div>
+</div>
+</section>
+<!-- 4. TABEL UTAMA KELOLA KARTU KELUARGA & QUICK DRAWER LAYOUT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Table Block (8 cols or full width depending on inspector open) -->
+<div class="lg:col-span-8 flex flex-col gap-3">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header Bar -->
+<div class="px-space-md py-3 bg-surface-container-low/80 border-b border-outline-variant/50 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md font-bold text-on-surface">Data Induk Kartu Keluarga Aktif</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-label-sm font-label-sm text-secondary font-bold">142 Baris</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="text-[11px]">Tampilkan Kolom Lengkap</span>
+<button class="p-1 rounded hover:bg-surface-container text-outline" title="Konfigurasi Tampilan">
+<span class="material-symbols-outlined text-base">view_column</span>
+</button>
+</div>
+</div>
+<!-- Table Responsive Container -->
+<div class="overflow-x-auto custom-scroll">
+<table class="w-full text-left border-collapse min-w-[760px]">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-label-sm font-label-sm border-b border-outline-variant/60">
+<th class="py-3 px-3 w-10 text-center">
+<input class="rounded border-outline-variant text-primary-container focus:ring-secondary" type="checkbox"/>
+</th>
+<th class="py-3 px-3">NO. KK &amp; KODE ARSIP</th>
+<th class="py-3 px-3">KEPALA KELUARGA &amp; KONTAK</th>
+<th class="py-3 px-3">ALAMAT &amp; STATUS</th>
+<th class="py-3 px-3 text-center">ANGGOTA</th>
+<th class="py-3 px-3">BERKAS KK</th>
+<th class="py-3 px-3">STATUS RT</th>
+<th class="py-3 px-3 text-right pr-4">AKSI</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30 text-body-sm font-body-sm">
+<!-- ROW 1: Bpk. Bambang Sutrisno (SELECTED / HIGHLIGHTED) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors bg-secondary-fixed/20 border-l-4 border-l-secondary">
+<td class="py-3.5 px-3 text-center">
+<input checked="" class="rounded border-outline-variant text-primary-container focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm font-bold text-primary-container tracking-wider">3275012300040001</span>
+<button class="text-outline hover:text-on-surface" title="Salin No KK">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+</button>
+</div>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">qr_code_2</span> Reg. 2021-RT05-012
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary-container/10 text-primary-container font-bold flex items-center justify-center text-xs">
+                          BS
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Bpk. Bambang Sutrisno</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-emerald-600">call</span> 0812-9844-3321
+                          </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-0.5">
+<span class="font-semibold text-on-surface">Blok A1 No. 12</span>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1"></span> TETAP
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="font-bold text-on-surface text-label-md">4 Jiwa</span>
+<span class="text-[10px] text-on-surface-variant">2L • 2P</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="material-symbols-outlined text-xs">task_alt</span> Valid Digital
+                      </span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+<span class="material-symbols-outlined text-xs">verified</span> Lunas Iuran
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right pr-4">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-secondary" title="Pratinjau Anggota">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Cetak Bukti Domisili RT">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" title="Opsi Lanjutan">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Bpk. Agus Setiawan -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-3 text-center">
+<input class="rounded border-outline-variant text-primary-container focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm font-bold text-on-surface tracking-wider">3275011805120004</span>
+<button class="text-outline hover:text-on-surface" title="Salin No KK">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+</button>
+</div>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">qr_code_2</span> Reg. 2018-RT05-005
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-blue-100 text-blue-800 font-bold flex items-center justify-center text-xs">
+                          AS
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Bpk. Agus Setiawan</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-emerald-600">call</span> 0813-8821-4509
+                          </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-0.5">
+<span class="font-semibold text-on-surface">Blok A2 No. 05</span>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1"></span> TETAP
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="font-bold text-on-surface text-label-md">3 Jiwa</span>
+<span class="text-[10px] text-on-surface-variant">2L • 1P</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="material-symbols-outlined text-xs">task_alt</span> Valid Digital
+                      </span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+<span class="material-symbols-outlined text-xs">verified</span> Lunas Iuran
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right pr-4">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Bpk. Hendra Gunawan (Kontrak & Usulan Bansos) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-3 text-center">
+<input class="rounded border-outline-variant text-primary-container focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm font-bold text-on-surface tracking-wider">3175061908200008</span>
+<button class="text-outline hover:text-on-surface" title="Salin No KK">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+</button>
+</div>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">qr_code_2</span> Reg. 2023-RT05-089
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-amber-100 text-amber-900 font-bold flex items-center justify-center text-xs">
+                          HG
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Bpk. Hendra Gunawan</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-emerald-600">call</span> 0857-1920-8812
+                          </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-0.5">
+<span class="font-semibold text-on-surface">Blok B3 No. 14</span>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-800 border border-blue-200">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 mr-1"></span> KONTRAK (s/d Des 2026)
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="font-bold text-on-surface text-label-md">1 Jiwa</span>
+<span class="text-[10px] text-on-surface-variant">1L • 0P</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="material-symbols-outlined text-xs">task_alt</span> Valid Digital
+                      </span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
+<span class="material-symbols-outlined text-xs text-amber-600">handshake</span> Usulan Bansos
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right pr-4">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Ibu Hj. Siti Aminah (Lansia Mandiri) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-3 text-center">
+<input class="rounded border-outline-variant text-primary-container focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm font-bold text-on-surface tracking-wider">3275010901990001</span>
+<button class="text-outline hover:text-on-surface" title="Salin No KK">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+</button>
+</div>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">qr_code_2</span> Reg. 1999-RT05-002
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-900 font-bold flex items-center justify-center text-xs">
+                          SA
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Ibu Hj. Siti Aminah</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-emerald-600">call</span> 0811-3322-1100
+                          </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-0.5">
+<span class="font-semibold text-on-surface">Blok B1 No. 02</span>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1"></span> TETAP
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="font-bold text-on-surface text-label-md">2 Jiwa</span>
+<span class="text-[10px] text-on-surface-variant">1L • 1P</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="material-symbols-outlined text-xs">task_alt</span> Valid Digital
+                      </span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-purple-800 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">
+<span class="material-symbols-outlined text-xs text-purple-600">elderly</span> Lansia Mandiri
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right pr-4">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: Bpk. Ahmad Fauzi (Keluarga Besar) -->
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-3.5 px-3 text-center">
+<input class="rounded border-outline-variant text-primary-container focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-code-sm text-code-sm font-bold text-on-surface tracking-wider">3275012204150009</span>
+<button class="text-outline hover:text-on-surface" title="Salin No KK">
+<span class="material-symbols-outlined text-xs">content_copy</span>
+</button>
+</div>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-xs text-secondary">qr_code_2</span> Reg. 2015-RT05-044
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-slate-100 text-slate-800 font-bold flex items-center justify-center text-xs">
+                          AF
+                        </div>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface">Bpk. Ahmad Fauzi</span>
+<span class="text-[11px] text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-emerald-600">call</span> 0819-0987-6543
+                          </span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<div class="flex flex-col gap-0.5">
+<span class="font-semibold text-on-surface">Blok C1 No. 08</span>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mr-1"></span> TETAP
+                        </span>
+</div>
+</td>
+<td class="py-3.5 px-3 text-center">
+<div class="inline-flex flex-col items-center">
+<span class="font-bold text-on-surface text-label-md">5 Jiwa</span>
+<span class="text-[10px] text-on-surface-variant">3L • 2P</span>
+</div>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
+<span class="material-symbols-outlined text-xs">task_alt</span> Valid Digital
+                      </span>
+</td>
+<td class="py-3.5 px-3">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700">
+<span class="material-symbols-outlined text-xs">verified</span> Lunas Iuran
+                      </span>
+</td>
+<td class="py-3.5 px-3 text-right pr-4">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">print</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer: Pagination & Bulk Controls -->
+<div class="p-space-md border-t border-outline-variant/50 bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span>Menampilkan <strong>1 - 10</strong> dari <strong>142</strong> KK terdaftar</span>
+<span class="hidden sm:inline">•</span>
+<select class="h-8 px-2 rounded border border-outline-variant bg-surface-container-low text-xs">
+<option>10 per halaman</option>
+<option>25 per halaman</option>
+<option>50 per halaman</option>
+</select>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-outline disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary-container text-white text-xs font-bold">1</button>
+<button class="w-8 h-8 rounded border border-outline-variant hover:bg-surface-container text-xs font-medium text-on-surface">2</button>
+<button class="w-8 h-8 rounded border border-outline-variant hover:bg-surface-container text-xs font-medium text-on-surface">3</button>
+<span class="px-1 text-outline">...</span>
+<button class="w-8 h-8 rounded border border-outline-variant hover:bg-surface-container text-xs font-medium text-on-surface">15</button>
+<button class="w-8 h-8 rounded border border-outline-variant flex items-center justify-center text-on-surface hover:bg-surface-container">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Quick Inspection Panel / Drawer Preview (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Detailed KK Inspector Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/60 shadow-md p-space-md flex flex-col gap-space-md">
+<!-- Header Panel Inspector -->
+<div class="flex items-center justify-between border-b border-outline-variant/40 pb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">folder_shared</span>
+<h3 class="text-title-md font-title-md text-on-surface font-bold">Detail Arsip Kartu Keluarga</h3>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded-full">Aktif Terdata</span>
+</div>
+<!-- KK Identifier Banner -->
+<div class="bg-surface-container-low p-3.5 rounded-lg border border-outline-variant/40 flex flex-col gap-1">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">Nomor Kartu Keluarga (KK)</span>
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-headline-sm font-bold text-primary-container tracking-wider">3275012300040001</span>
+<button class="text-secondary hover:text-primary-container p-1 rounded hover:bg-surface-container" title="Buka Arsip Dukcapil">
+<span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+</div>
+<div class="flex items-center justify-between mt-1 text-body-sm">
+<span class="text-on-surface font-medium">Kepala Keluarga: <strong>Bpk. Bambang Sutrisno</strong></span>
+<span class="text-xs bg-surface-container px-2 py-0.5 rounded text-outline font-semibold">RT 05 / RW 08</span>
+</div>
+</div>
+<!-- List Anggota Keluarga (Susunan Jiwa) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="text-label-md font-label-md font-bold text-on-surface">Daftar Susunan Anggota (4 Jiwa)</span>
+<button class="text-[11px] font-bold text-secondary hover:underline">+ Tambah Anggota</button>
+</div>
+<div class="flex flex-col divide-y divide-outline-variant/30 border border-outline-variant/50 rounded-lg overflow-hidden bg-surface-bright">
+<!-- Anggota 1: Kepala Keluarga -->
+<div class="p-2.5 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary-container">person</span>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface text-xs">Bambang Sutrisno (52 Th)</span>
+<span class="font-code-sm text-[11px] text-outline">NIK: 3275011209720002</span>
+</div>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-primary-container text-white">KEPALA KELUARGA</span>
+</div>
+<!-- Anggota 2: Istri -->
+<div class="p-2.5 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-pink-600">person_2</span>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface text-xs">Endah Tri Wahyuni (48 Th)</span>
+<span class="font-code-sm text-[11px] text-outline">NIK: 3275014503760005</span>
+</div>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-pink-100 text-pink-900">ISTRI</span>
+</div>
+<!-- Anggota 3: Anak 1 -->
+<div class="p-2.5 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-blue-600">face</span>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface text-xs">Rizky Ananda Sutrisno (22 Th)</span>
+<span class="font-code-sm text-[11px] text-outline">NIK: 3275010811020007</span>
+</div>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">ANAK</span>
+</div>
+<!-- Anggota 4: Anak 2 -->
+<div class="p-2.5 flex items-center justify-between text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-teal-600">face_3</span>
+<div class="flex flex-col">
+<span class="font-bold text-on-surface text-xs">Nabila Putri Sutrisno (16 Th)</span>
+<span class="font-code-sm text-[11px] text-outline">NIK: 3275016204080001</span>
+</div>
+</div>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded bg-surface-container text-on-surface-variant">ANAK</span>
+</div>
+</div>
+</div>
+<!-- Kelengkapan Dokumen Digital / Berkas Scan -->
+<div class="flex flex-col gap-2">
+<span class="text-label-md font-label-md font-bold text-on-surface">Arsip Berkas Digital Tersimpan</span>
+<div class="grid grid-cols-2 gap-2">
+<div class="p-2.5 rounded-lg border border-outline-variant/60 bg-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-red-600 text-xl">picture_as_pdf</span>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-bold text-on-surface truncate">Scan_KK_Bambang.pdf</span>
+<span class="text-[10px] text-emerald-700 font-semibold">Terverifikasi Dukcapil</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg border border-outline-variant/60 bg-surface-container-low flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-xl">image</span>
+<div class="flex flex-col min-w-0">
+<span class="text-xs font-bold text-on-surface truncate">KTP_Kepala_KK.jpg</span>
+<span class="text-[10px] text-emerald-700 font-semibold">KTP-el Terbaca</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Drawer Bottom -->
+<div class="flex items-center gap-2 pt-2 border-t border-outline-variant/40">
+<button class="flex-1 py-2 px-3 rounded-lg bg-surface-container text-on-surface text-label-md font-label-md font-bold hover:bg-surface-container-high transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base">print</span>
+<span>Cetak Domisili</span>
+</button>
+<button class="flex-1 py-2 px-3 rounded-lg bg-primary-container text-white text-label-md font-label-md font-bold hover:bg-opacity-90 transition-all flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base">edit</span>
+<span>Ubah Data KK</span>
+</button>
+</div>
+</div>
+<!-- Quick Tip / Civic Regulation Banner -->
+<div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex items-start gap-3">
+<span class="material-symbols-outlined text-amber-700 text-xl shrink-0 mt-0.5">info</span>
+<div class="flex flex-col text-xs">
+<span class="font-bold">Standar Administrasi KK RT 05</span>
+<p class="mt-0.5 text-amber-800 leading-relaxed">
+                Setiap pergantian kepala keluarga atau penambahan anggota baru wajib melampirkan berkas scan KK terbaru dari Disdukcapil dalam kurun waktu 14 hari kerja.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Copyright & Ledger Info -->
+<footer class="mt-auto py-4 px-space-xl border-t border-outline-variant/40 bg-surface-container-lowest text-body-sm text-on-surface-variant flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-2 text-xs">
+<span class="font-semibold text-primary-container">SIP-Warga Cibubur</span>
+<span>•</span>
+<span>Sistem Informasi Pengelolaan Kependudukan RT 05 / RW 08</span>
+</div>
+<div class="text-[11px] text-outline">
+        Terakhir disinkronisasi: Hari ini, 15:42 WIB oleh Ibu Nurhayati (Sekretaris RT)
+      </div>
+</footer>
+</div>
+</body></html>
