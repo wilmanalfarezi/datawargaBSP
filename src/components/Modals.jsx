@@ -15,19 +15,19 @@ export function EditKKModal({ kk, onClose, onSave }) {
         <h3>Perbarui Data Kartu Keluarga</h3>
         <p>No KK: <b className="mono">{kk.noKK}</b> — Kepala: <b>{kk.kepala}</b></p>
       </div>
-      <form className="modal-body" onSubmit={e => { e.preventDefault(); onSave() }}>
+      <form className="modal-body" onSubmit={e => { e.preventDefault(); onSave(Object.fromEntries(new FormData(e.target))) }}>
         <div className="grid-form">
-          <div className="field"><label>No. Kartu Keluarga (16 digit) *</label><input defaultValue={kk.noKK} maxLength={16} required /></div>
-          <div className="field"><label>Nama Kepala Keluarga *</label><input defaultValue={kk.kepala} required /></div>
-          <div className="field full"><label>Alamat Lengkap *</label><input defaultValue={kk.alamat} required /></div>
+          <div className="field"><label>No. Kartu Keluarga (16 digit) *</label><input name="noKK" defaultValue={kk.noKK} maxLength={16} required /></div>
+          <div className="field"><label>Nama Kepala Keluarga *</label><input name="kepala" defaultValue={kk.kepala} required /></div>
+          <div className="field full"><label>Alamat Lengkap *</label><input name="alamat" defaultValue={kk.alamat} required /></div>
           <div className="field"><label>Status Hunian (FR-09) *</label>
-            <select defaultValue={kk.status}><option>Tetap</option><option>Kontrak</option><option>Kos</option><option>Pindah</option></select>
+            <select name="status" defaultValue={kk.status}><option>Tetap</option><option>Kontrak</option><option>Kos</option><option>Pindah</option></select>
           </div>
           <div className="field"><label>Blok / Wilayah RT 05 *</label>
-            <select defaultValue={kk.blok}><option value="A">Blok A (Jl. Mawar Raya)</option><option value="B">Blok B (Jl. Melati Utama)</option><option value="C">Blok C (Jl. Anggrek Indah)</option></select>
+            <select name="blok" defaultValue={kk.blok}><option value="A">Blok A (Jl. Mawar Raya)</option><option value="B">Blok B (Jl. Melati Utama)</option><option value="C">Blok C (Jl. Anggrek Indah)</option></select>
           </div>
-          <div className="field"><label>NIK Kepala Keluarga *</label><input defaultValue={kk.nikKepala} /></div>
-          <div className="field"><label>No. HP / WA</label><input placeholder="08xx-xxxx-xxxx" /></div>
+          <div className="field"><label>NIK Kepala Keluarga *</label><input name="nikKepala" defaultValue={kk.nikKepala} /></div>
+          <div className="field"><label>No. HP / WA</label><input name="noHp" defaultValue={kk.noHp || ''} placeholder="08xx-xxxx-xxxx" /></div>
         </div>
         <div className="warn-box">Perubahan tercatat di <b>Audit Trail (FR-18)</b> beserta aktor, waktu, dan IP. Pastikan NIK 16 digit valid sebelum menyimpan.</div>
         <div className="modal-foot" style={{ margin: '0 -20px -18px', borderRadius: '0 0 12px 12px' }}>
@@ -48,16 +48,16 @@ export function DeleteKKModal({ kk, onClose, onConfirm }) {
         <h3>Arsipkan Kartu Keluarga?</h3>
         <p>Data tidak dihapus permanen — dipindah ke status <b>Pindah / Arsip</b> dan dapat dipulihkan.</p>
       </div>
-      <div className="modal-body">
+      <form id="form-arsip-kk" className="modal-body" onSubmit={e => { e.preventDefault(); onConfirm(Object.fromEntries(new FormData(e.target))) }}>
         <div className="danger-box"><b>{kk.kepala}</b> — KK <span className="mono">{kk.noKK}</span><br />{kk.alamat} • {kk.anggotaCount} jiwa</div>
         <div className="field"><label>Alasan pengarsipan *</label>
-          <select><option>Pindah domisili keluar RT</option><option>Data ganda / duplikat</option><option>Permintaan keluarga</option><option>Lainnya</option></select>
+          <select name="alasan"><option>Pindah domisili keluar RT</option><option>Data ganda / duplikat</option><option>Permintaan keluarga</option><option>Lainnya</option></select>
         </div>
-        <div className="field"><label>Catatan tambahan</label><textarea rows={3} placeholder="Contoh: Pindah ke Bandung, Kel. Dago per 01 Okt 2026..." /></div>
-      </div>
+        <div className="field"><label>Catatan tambahan</label><textarea name="catatan" rows={3} placeholder="Contoh: Pindah ke Bandung, Kel. Dago per 01 Okt 2026..." /></div>
+      </form>
       <div className="modal-foot">
         <button className="btn" onClick={onClose}>Batal</button>
-        <button className="btn" style={{ background: '#BA1A1A', color: '#fff', borderColor: '#BA1A1A' }} onClick={onConfirm}><span className="material-symbols-outlined">archive</span>Ya, Arsipkan</button>
+        <button type="submit" form="form-arsip-kk" className="btn" style={{ background: '#BA1A1A', color: '#fff', borderColor: '#BA1A1A' }}><span className="material-symbols-outlined">archive</span>Ya, Arsipkan</button>
       </div>
     </ModalShell>
   )
@@ -72,17 +72,17 @@ export function AddAnggotaModal({ kk, onClose, onSave }) {
         <h3>Tambah Anggota Keluarga Baru</h3>
         <p>Ke KK <b className="mono">{kk.noKK}</b> — {kk.kepala}</p>
       </div>
-      <form className="modal-body" onSubmit={e => { e.preventDefault(); onSave() }}>
+      <form className="modal-body" onSubmit={e => { e.preventDefault(); onSave(Object.fromEntries(new FormData(e.target))) }}>
         <div className="grid-form">
-          <div className="field full"><label>Nama Lengkap (sesuai KTP/KK) *</label><input placeholder="Contoh: Salsa Nabila" required /></div>
-          <div className="field"><label>NIK (16 digit) *</label><input placeholder="3275xxxxxxxxxxxx" maxLength={16} required /></div>
+          <div className="field full"><label>Nama Lengkap (sesuai KTP/KK) *</label><input name="nama" placeholder="Contoh: Salsa Nabila" required /></div>
+          <div className="field"><label>NIK (16 digit) *</label><input name="nik" placeholder="3275xxxxxxxxxxxx" maxLength={16} required /></div>
           <div className="field"><label>Hubungan Keluarga *</label>
-            <select><option>Anak</option><option>Istri</option><option>Suami</option><option>Orang Tua</option><option>Menantu</option><option>Cucu</option><option>Famili Lain</option></select>
+            <select name="hub"><option>Anak</option><option>Istri</option><option>Suami</option><option>Orang Tua</option><option>Menantu</option><option>Cucu</option><option>Famili Lain</option></select>
           </div>
-          <div className="field"><label>Jenis Kelamin *</label><select><option>Laki-laki</option><option>Perempuan</option></select></div>
-          <div className="field"><label>Tanggal Lahir *</label><input type="date" required /></div>
-          <div className="field"><label>Pekerjaan</label><input placeholder="Pelajar / Mahasiswa / Wiraswasta..." /></div>
-          <div className="field"><label>Status Kependudukan</label><select><option>Tetap</option><option>Kontrak</option><option>Kos</option></select></div>
+          <div className="field"><label>Jenis Kelamin *</label><select name="jk"><option>Laki-laki</option><option>Perempuan</option></select></div>
+          <div className="field"><label>Tanggal Lahir *</label><input name="tanggalLahir" type="date" required /></div>
+          <div className="field"><label>Pekerjaan</label><input name="pekerjaan" placeholder="Pelajar / Mahasiswa / Wiraswasta..." /></div>
+          <div className="field"><label>Status Kependudukan</label><select name="status"><option>Tetap</option><option>Kontrak</option><option>Kos</option></select></div>
         </div>
         <div className="modal-foot" style={{ margin: '0 -20px -18px', borderRadius: '0 0 12px 12px' }}>
           <button type="button" className="btn" onClick={onClose}>Batal</button>
@@ -101,13 +101,14 @@ export function TambahKKModal({ onClose, onSave }) {
         <h3>Tambah Kartu Keluarga Baru</h3>
         <p>Registrasi KK baru warga RT 05/RW 08 — verifikasi NIK ganda otomatis.</p>
       </div>
-      <form className="modal-body" onSubmit={e => { e.preventDefault(); onSave() }}>
+      <form className="modal-body" onSubmit={e => { e.preventDefault(); onSave(Object.fromEntries(new FormData(e.target))) }}>
         <div className="grid-form">
-          <div className="field"><label>No. KK (16 digit) *</label><input placeholder="3275xxxxxxxxxxxx" required /></div>
-          <div className="field"><label>Nama Kepala Keluarga *</label><input placeholder="Nama lengkap" required /></div>
-          <div className="field"><label>NIK Kepala Keluarga *</label><input placeholder="16 digit NIK" required /></div>
-          <div className="field"><label>Status Hunian *</label><select><option>Tetap</option><option>Kontrak</option><option>Kos</option></select></div>
-          <div className="field full"><label>Alamat *</label><input placeholder="Jl. Mawar No. xx, Blok x" required /></div>
+          <div className="field"><label>No. KK (16 digit) *</label><input name="noKK" placeholder="3275xxxxxxxxxxxx" maxLength={16} required /></div>
+          <div className="field"><label>Nama Kepala Keluarga *</label><input name="kepala" placeholder="Nama lengkap" required /></div>
+          <div className="field"><label>NIK Kepala Keluarga *</label><input name="nikKepala" placeholder="16 digit NIK" maxLength={16} required /></div>
+          <div className="field"><label>Status Hunian *</label><select name="status"><option>Tetap</option><option>Kontrak</option><option>Kos</option></select></div>
+          <div className="field"><label>Blok / Wilayah *</label><select name="blok"><option value="A">Blok A (Jl. Mawar Raya)</option><option value="B">Blok B (Jl. Melati Utama)</option><option value="C">Blok C (Jl. Anggrek Indah)</option></select></div>
+          <div className="field full"><label>Alamat *</label><input name="alamat" placeholder="Jl. Mawar No. xx, Blok x" required /></div>
         </div>
         <div className="modal-foot" style={{ margin: '0 -20px -18px', borderRadius: '0 0 12px 12px' }}>
           <button type="button" className="btn" onClick={onClose}>Batal</button>
