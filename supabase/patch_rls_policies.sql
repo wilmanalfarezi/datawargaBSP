@@ -9,7 +9,7 @@
 --   saat frontend menyimpan data (insert sukses tapi update
 --   tersenyap 0 baris).
 -- Script ini aman dijalankan berulang kali.
--- ============================================================
+-- ======================================= sv=====================
 
 alter table public.kartu_keluarga enable row level security;
 alter table public.anggota_keluarga enable row level security;
